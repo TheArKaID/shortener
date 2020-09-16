@@ -21,7 +21,8 @@
                 <br>
                 <span id="wannasave">
                     Ingin mengetahui seberapa banyak URL anda dibuka ? <br>
-                    <a href="">Login</a> atau <a href="">Daftar</a> Sekarang!
+                    <input type="text" wire:model.defer="url" hidden>
+                    <a id="log" href="#" wire:click="login">Login</a> atau <a id="log" href="#" wire:click="register">Daftar</a> Sekarang!
                 </span>
             @else
                 <span id="result">{{ session('gagal') }}</span>
@@ -34,5 +35,9 @@
     document.getElementById('btn').onclick = function() {
         document.getElementById('result').style.display = 'none';
         document.getElementById('wannasave').style.display = 'inherit';
+    }
+
+    document.getElementById('log').onclick = function () {
+        document.getElementById('result').style.display = 'none';
     }
 </script>

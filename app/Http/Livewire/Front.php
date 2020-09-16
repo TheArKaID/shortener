@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 use App\Models\Link;
 use Illuminate\Support\Str;
@@ -13,7 +14,7 @@ class Front extends Component
 
     public function render()
     {
-        return view('livewire.front');
+        return view('livewire.front')->layout('layouts.home');
     }
 
     public function short()
@@ -46,5 +47,18 @@ class Front extends Component
         array_pop($url);
         $url = implode('/', $url); 
         return $url.'/';
+    }
+
+    public function login()
+    {
+        Cache::put('short_url', $this->url, now()->addMinutes(1000));
+        return redirect(route('login'));
+        // Cache::pull('short_url')
+    }
+
+    public function register()
+    {
+        Cache::put('short_url', $this->url, now()->addMinutes(1000));
+        return redirect(route('register'));
     }
 }
