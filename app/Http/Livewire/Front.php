@@ -31,9 +31,9 @@ class Front extends Component
             $link->views = 0;
             $link->save();
             $this->url = $this->getUrl() . $link->short_url;
-            session()->flash('result', 'URL Berhasil Dipendekkan!');
+            session()->flash('sukses', 'URL Berhasil Dipendekkan!');
         } else {
-            session()->flash('result', 'Gagal, Masukkan URL terlebih dahulu');
+            session()->flash('gagal', 'Gagal, Masukkan URL terlebih dahulu');
         }
     }
 

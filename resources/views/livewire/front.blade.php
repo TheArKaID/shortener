@@ -16,13 +16,16 @@
         </div>
         <div style="width: 100%; height: 20px">
             <span wire:loading>Memproses</span>
-            @if (session()->has('result'))
-                <span id="result">{{ session('result') }}</span>
+            @if (session()->has('sukses'))
+                <span id="result">{{ session('sukses') }}</span>
+                <br>
+                <span id="wannasave">
+                    Ingin mengetahui seberapa banyak URL anda dibuka ? <br>
+                    <a href="">Login</a> atau <a href="">Daftar</a> Sekarang!
+                </span>
+            @else
+                <span id="result">{{ session('gagal') }}</span>
             @endif
-        </div>
-        <div>
-            Ingin mengetahui seberapa banyak URL anda dibuka ? 
-            <a href="">Login</a> atau <a href="">Daftar</a> Sekarang!
         </div>
     </div>
 </div>
@@ -30,5 +33,6 @@
 <script>
     document.getElementById('btn').onclick = function() {
         document.getElementById('result').style.display = 'none';
+        document.getElementById('wannasave').style.display = 'inherit';
     }
 </script>
