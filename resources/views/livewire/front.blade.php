@@ -1,16 +1,31 @@
 <div class="s130">
-    <form>
-      <div class="inner-form">
-        <div class="input-field first-wrap">
-          <div class="svg-wrapper">
-            <h2><b>S</b></h2>
-          </div>
-          <input id="search" type="text" placeholder="Masukkan URL" />
+    <div class="inner">
+        <div>
+            <span style="font-weight: bold">Short It, Save It</span>
         </div>
-        <div class="input-field second-wrap">
-          <button class="btn-search" type="button">Short!</button>
+        <div class="inner-form">
+            <div class="input-field first-wrap">
+                <div class="svg-wrapper">
+                    <h2><b>S</b></h2>
+                </div>
+                <input wire:model.lazy="url" type="text" placeholder="Masukkan URL">
+            </div>
+            <div class="input-field second-wrap">
+                <button id="btn" class="btn-submit" wire:click="short">Short!</button>
+            </div>
         </div>
-      </div>
-      <span class="info" style="font-weight: bold">Short it as you want</span>
-    </form>
-  </div>
+        <div style="width: 100%;">
+            <span wire:loading>Memproses</span>
+            @if (session()->has('result'))
+                <span id="result">{{ session('result') }}</span>
+            @endif
+        </div>
+    </div>
+</div>
+<script>
+    
+    document.getElementById('btn').onclick = function() {
+        document.getElementById('result').style.display = 'none';
+    }
+    
+</script>
