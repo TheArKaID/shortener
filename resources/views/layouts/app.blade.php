@@ -89,6 +89,5 @@
   </div>
 </body>
 @yield('scripts')
-<script src="{{ url('js/bootstrap.min.js') }}"></script>
 
 </html>
