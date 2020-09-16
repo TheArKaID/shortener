@@ -18,4 +18,9 @@
 
   </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
+  <script>
+    document.getElementById('btn').onclick = function() {
+        document.getElementById('result').style.display = 'none';
+    }
+  </script>
 </html>

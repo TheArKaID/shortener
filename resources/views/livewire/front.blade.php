@@ -22,10 +22,3 @@
         </div>
     </div>
 </div>
-<script>
-    
-    document.getElementById('btn').onclick = function() {
-        document.getElementById('result').style.display = 'none';
-    }
-    
-</script>
