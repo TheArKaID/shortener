@@ -22,20 +22,14 @@
     <div id="app">
         <div class="main-wrapper">
             
-            @include('layouts.includes.nav')
+            @include('layouts.includes.navbar')
+
+            @include('layouts.includes.sidebar')
 
             <!-- Main Content -->
             <div class="main-content">
                 <section class="section">
-                <div class="section-header">
-                    <h1>Blank Page</h1>
-                </div>
-
-                <div class="section-body">
-                    
                     @yield('content')
-
-                </div>
                 </section>
             </div>
 
@@ -57,5 +51,5 @@
     <script src="{{ asset('assets/js/custom.js')}}"></script>
 
     <!-- Page Specific JS File -->
-    
+
 </html>
