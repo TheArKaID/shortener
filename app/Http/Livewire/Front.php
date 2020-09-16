@@ -23,7 +23,10 @@ class Front extends Component
             $link->url = $this->url;
             $link->user_id = 0;
             $link->name = "";
-            $link->short_url = Str::random(6);
+            do {
+                $link->short_url = Str::random(6);
+                $checklink = Link::where('short_url', $link->short_url)->first();
+            } while ($checklink);
             $link->istransit = 1;
             $link->views = 0;
             $link->save();
