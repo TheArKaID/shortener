@@ -6,7 +6,7 @@
         <div class="inner-form">
             <div class="input-field first-wrap">
                 <div class="svg-wrapper">
-                    <h2><b>S</b></h2>
+                    <i class="fas fa-link" style="color: #ad0000; font-size: 2em"></i>
                 </div>
                 <input wire:model.lazy="url" type="text" placeholder="Masukkan URL">
             </div>
@@ -20,5 +20,15 @@
                 <span id="result">{{ session('result') }}</span>
             @endif
         </div>
+        <div>
+            Ingin mengetahui seberapa banyak URL anda dibuka ? 
+            <a href="">Login</a> atau <a href="">Daftar</a> Sekarang!
+        </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('btn').onclick = function() {
+        document.getElementById('result').style.display = 'none';
+    }
+</script>
