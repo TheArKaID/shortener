@@ -41,3 +41,8 @@
         document.getElementById('result').style.display = 'none';
     }
 </script>
+
+@section('styles')
+    
+    <link href="{{url('css/main.css')}}" rel="stylesheet" />
+@endsection

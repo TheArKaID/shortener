@@ -14,7 +14,7 @@ class Front extends Component
 
     public function render()
     {
-        return view('livewire.front')->layout('layouts.home');
+        return view('livewire.front')->extends('layouts.app');
     }
 
     public function short()
