@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="{{ url('css/fontawesome.css') }}">
 </head>
 
-<body class="bg-dark text-white">
+<body>
   <div id="app">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
       <div class="container">
@@ -88,8 +88,7 @@
     </main>
   </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+@yield('scripts')
 <script src="{{ url('js/bootstrap.min.js') }}"></script>
 
 </html>
