@@ -17,6 +17,8 @@ Route::get('/', App\Http\Livewire\Front::class)->name('front.index');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', App\Http\Livewire\Dashboard\Home::class)->name('home');
+});
 
 Route::get('/{short_url}', [App\Http\Controllers\RedirectController::class, 'index'])->name('goto');

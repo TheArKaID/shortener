@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>{{ env('APP_NAME', 'ArKa::Shortener')}}</title>
+  <link rel="shortcut icon" href="{{ asset('img/icon.png')}}" type="image/x-icon">
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{ asset('css/fontawesome.css')}}">
@@ -15,6 +16,9 @@
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
   
+  <livewire:scripts />
+  <livewire:styles />
+
   <script src="{{ asset('js/app.js') }}"></script>
 </head>
 
@@ -29,6 +33,9 @@
             <!-- Main Content -->
             <div class="main-content">
                 <section class="section">
+                    <div class="section-header">
+                        <h1> @yield('title') </h1>
+                    </div>
                     @yield('content')
                 </section>
             </div>
@@ -45,6 +52,7 @@
     <script src="{{ asset('assets/js/stisla.js') }}"></script>
 
     <!-- JS Libraies -->
+    @yield('scripts')
 
     <!-- Template JS File -->
     <script src="{{ asset('assets/js/scripts.js')}}"></script>
