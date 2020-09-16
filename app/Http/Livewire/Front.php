@@ -30,10 +30,21 @@ class Front extends Component
             $link->istransit = 1;
             $link->views = 0;
             $link->save();
-            $this->url = 'https://s.arka/'. $link->short_url;
+            $this->url = $this->getUrl() . $link->short_url;
             session()->flash('result', 'URL Berhasil Dipendekkan!');
         } else {
             session()->flash('result', 'Gagal, Masukkan URL terlebih dahulu');
         }
+    }
+
+    public function getUrl()
+    {
+        $url = \Request::url();
+        $url = explode('/', $url);
+        array_pop($url);
+        array_pop($url);
+        array_pop($url);
+        $url = implode('/', $url); 
+        return $url.'/';
     }
 }
