@@ -14,7 +14,7 @@
                 <button id="btn" class="btn-submit" wire:click="short">Short!</button>
             </div>
         </div>
-        <div style="width: 100%;">
+        <div style="width: 100%; height: 20px">
             <span wire:loading>Memproses</span>
             @if (session()->has('result'))
                 <span id="result">{{ session('result') }}</span>
