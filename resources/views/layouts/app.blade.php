@@ -13,7 +13,7 @@
   <!-- Scripts -->
   <script src="{{ asset('js/app.js') }}" defer></script>
   <livewire:scripts />
-  <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script>
+  <script src="{{ asset('js/turbolinks-0.1.0.js') }}" data-turbolinks-eval="false"></script>
 
   <!-- Fonts -->
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
