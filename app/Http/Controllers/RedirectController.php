@@ -12,6 +12,7 @@ class RedirectController extends Controller
     {
         $url = Link::whereRaw('BINARY short_url = "' .$short_url. '"')->first();
         if($url) {
+            $url->increment('views');
             return redirect($url->url);
         } else {
             return redirect(route('home'));
