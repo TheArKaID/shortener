@@ -26,6 +26,7 @@
   
   <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ url('css/fontawesome.css') }}">
+  @laravelPWA
 </head>
 
 <body>
