@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', App\Http\Livewire\Front::class)->name('home');
+Route::get('/', App\Http\Livewire\Front::class)->name('front.index');
 
 Auth::routes();
 

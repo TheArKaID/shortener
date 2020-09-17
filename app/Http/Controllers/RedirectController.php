@@ -15,7 +15,7 @@ class RedirectController extends Controller
             $url->increment('views');
             return redirect($url->url);
         } else {
-            return redirect(route('home'));
+            return redirect(route('front.index'));
         }
     }
 }

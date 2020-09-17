@@ -66,19 +66,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $short_url = Cache::get('short_url');
-        Cache::forget('short_url');
-        $short_url = explode('/', $short_url);
-        $short_url = $short_url[count($short_url)-1];
-        $link = Link::where('short_url', $short_url)->first();
         $user = User::create([
             'isadmin' => 0,
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-        $link->user_id = $user->id;
-        $link->save();
+        if(Cache::has('short_url')) {
+            $short_url = Cache::get('short_url');
+            Cache::forget('short_url');
+            $short_url = explode('/', $short_url);
+            $short_url = $short_url[count($short_url)-1];
+            $link = Link::where('short_url', $short_url)->first();
+            $link->user_id = $user->id;
+            $link->save();
+        }
         return $user;
     }
 }
