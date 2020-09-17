@@ -11,6 +11,14 @@
                         <h4>Your URL</h4>
                     </div>
                     <div class="card-body">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Cari URL/Shorted URL Anda...." wire:model="search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success" type="button" disabled><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
                         @if ($links->total()===0)
                             <div class="empty-state" data-height="400" style="height: 400px;">
                                 <div class="empty-state-icon bg-danger">
@@ -28,7 +36,7 @@
                                     <tbody>
                                         <tr>
                                             <th>#</th>
-                                            <th style="max-width: 20%">URL</th>
+                                            <th style="width: 25%">URL</th>
                                             <th>Shorted URL</th>
                                             <th>Views</th>
                                             <th>Action</th>
@@ -36,7 +44,9 @@
                                         @foreach ($links as $row => $link)
                                             <tr>
                                                 <td>{{$links->firstItem()+$row}}</td>
-                                                <td><a target="_blank" href="{{$link->url}}">{{$link->url}}</a></td>
+                                                <td>
+                                                    <a target="_blank" href="{{$link->url}}" title="" data-toggle="tooltip" data-original-title="{{$link->url}}">{{\Str::limit($link->url, 25)}}</a>
+                                                </td>
                                                 <td><a target="_blank" href="{{$this_url.$link->short_url}}">{{$this_url.$link->short_url}}</a></td>
                                                 <td>{{$link->views}}</td>
                                                 <td><a href="#" class="btn btn-danger">Delete</a></td>

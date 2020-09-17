@@ -13,6 +13,11 @@ class UserLink extends Component
     protected $paginationTheme = 'bootstrap';
 
     public $this_url;
+    public $search = '';
+
+    protected $queryString = [
+        'search' => ['except' => '']
+    ];
 
     public function mount()
     {
@@ -22,7 +27,11 @@ class UserLink extends Component
     public function render()
     {
         return view('livewire.dashboard.user-link', [
-            'links' => Link::where('user_id', \Auth::user()->id)->paginate(10)
+            'links' => $this->search==='' 
+                ? Link::where('user_id', \Auth::user()->id)->paginate(5) 
+                : Link::where('user_id', \Auth::user()->id)
+                    ->where('url', 'LIKE', '%'.$this->search.'%')
+                    ->orWhere('short_url', 'LIKE', '%'.$this->search.'%')->paginate(10)
         ])->extends('layouts.main');
     }
         
