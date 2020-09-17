@@ -80,6 +80,7 @@
                                                             <button wire:click="deleteUrl('{{$link->id}}')" class="dropdown-item bg-danger">Hapus</button>
                                                         </div>
                                                     </div>
+                                                    <a href="{{ route('dashboard.edit-link', $link->id) }}" class="btn btn-warning">Edit</a>
                                                 </td>
                                             </tr>
                                         @endforeach
