@@ -16,7 +16,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-title">Settings</div>
-                <a href="#" class="dropdown-item has-icon">
+                <a href="{{ route('dashboard.profile') }}" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> Profile
                 </a>
                 <div class="dropdown-divider"></div>

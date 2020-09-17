@@ -21,6 +21,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', App\Http\Livewire\Dashboard\Home::class)->name('dashboard.home');
     Route::get('/link', App\Http\Livewire\Dashboard\UserLink::class)->name('dashboard.link');
     Route::get('/link/{id}', App\Http\Livewire\Dashboard\EditLink::class)->name('dashboard.edit-link');
+    Route::get('/profile', App\Http\Livewire\Dashboard\Profile::class)->name('dashboard.profile');
 });
 
 Route::get('/{short_url}', [App\Http\Controllers\RedirectController::class, 'index'])->name('goto');
