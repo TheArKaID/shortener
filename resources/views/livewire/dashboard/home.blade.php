@@ -25,7 +25,7 @@
                                     <a id="open_url" target="_blank" href="{{$url}}" class="btn btn-success btn-icon icon-left">
                                         <i class="fas fa-link"></i> {{$url}}
                                     </a>
-                                    <a href="#" class="btn btn-warning" onclick="custom_url()">Custom URL</a>
+                                    <a href="#" class="btn btn-warning" onclick="custom_url()" data-turbolinks="false">Custom URL</a>
                                 </div>
                                 <div id="input_custom_url" class="form-group" style="display: none">
                                     <div class="input-group mb-3">
@@ -45,7 +45,7 @@
                                         <a id="open_url" target="_blank" href="{{$url}}" class="btn btn-success btn-icon icon-left">
                                             <i class="fas fa-link"></i> {{$url}}
                                         </a>
-                                        <a href="#" class="btn btn-warning" onclick="custom_url()">Custom URL</a>
+                                        <a href="#" class="btn btn-warning" onclick="custom_url()" data-turbolinks="false">Custom URL</a>
                                     </div>
                                     <div id="input_custom_url" class="form-group" style="display: none">
                                         <div class="input-group mb-3">
