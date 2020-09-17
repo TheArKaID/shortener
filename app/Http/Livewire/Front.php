@@ -51,14 +51,13 @@ class Front extends Component
 
     public function login()
     {
-        Cache::put('short_url', $this->url, now()->addMinutes(1000));
+        Cache::put('short_url', $this->url, now()->addMinutes(100));
         return redirect(route('login'));
-        // Cache::pull('short_url')
     }
 
     public function register()
     {
-        Cache::put('short_url', $this->url, now()->addMinutes(1000));
+        Cache::put('short_url', $this->url, now()->addMinutes(100));
         return redirect(route('register'));
     }
 }
