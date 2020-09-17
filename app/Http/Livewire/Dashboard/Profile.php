@@ -13,6 +13,7 @@ class Profile extends Component
 
     public $new_password;
     public $new_repassword;
+
     public function render()
     {
         return view('livewire.dashboard.profile')->extends('layouts.main');
@@ -39,11 +40,16 @@ class Profile extends Component
         }
         
         if($this->new_password || $this->new_repassword) {
-            if($this->new_password!==$this->new_repassword) {
-                session()->flash('gagal', 'Password Baru Tidak Sama!');
+            if(\Str::length($this->new_password)<8) {
+                session()->flash('gagal', 'Password Baru Minimal 8 Karakter!');
                 return redirect(route('dashboard.profile'));
             } else {
-                $user->password = \Hash::make($this->new_password);
+                if($this->new_password!==$this->new_repassword) {
+                    session()->flash('gagal', 'Password Baru Tidak Sama!');
+                    return redirect(route('dashboard.profile'));
+                } else {
+                    $user->password = \Hash::make($this->new_password);
+                }
             }
         }
 
