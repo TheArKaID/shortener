@@ -20,15 +20,13 @@
                     <i class="far fa-user"></i> Profile
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="{{ route('logout')}}" class="dropdown-item has-icon text-danger">
-                    <a class="dropdown-item" href="{{ route('logout') }}" 
+                <a class="dropdown-item" href="{{ route('logout') }}" 
                         onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i> Logout
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                    </form>
                 </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+                </form>
             </div>
         </li>
     </ul>
