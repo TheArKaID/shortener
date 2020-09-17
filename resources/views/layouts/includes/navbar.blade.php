@@ -7,10 +7,12 @@
                 <i class="fas fa-search"></i>
             </a></li>
         </ul>
-        <div class="search-element">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
-            <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-        </div>
+        @if (Request::is('link'))
+            <div class="search-element">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
+                <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        @endif
     </form>
     <ul class="navbar-nav navbar-right">
         <li class="dropdown"><a href="#" data-toggle="dropdown"
