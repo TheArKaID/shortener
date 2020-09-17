@@ -15,7 +15,7 @@
                             <div class="input-group mb-3">
                                 <input id="url" wire:model.defer="url" type="text" class="form-control" placeholder="Masukkan URL" aria-label="">
                                 <div class="input-group-append">
-                                    <button id="btn" class="btn btn-primary" wire:click="short" type="button">Short!
+                                    <button id="btn" class="btn btn-danger" wire:click="short" type="button">Short!
                                         <span wire:loading wire:target="short" class="fas fa-spinner"></span>
                                     </button>
                                 </div>
@@ -31,7 +31,7 @@
                                     <div class="input-group mb-3">
                                         <input wire:model.defer="custom_url" id="custom_url" type="text" class="form-control" placeholder="Ubah URL" aria-label="">
                                         <div class="input-group-append">
-                                            <button id="btn" class="btn btn-primary" wire:click="customURL" type="button">Simpan!
+                                            <button id="btn" class="btn btn-danger" wire:click="customURL" type="button">Simpan!
                                                 <span wire:loading wire:target="customURL" class="fas fa-spinner"></span>
                                             </button>
                                             <button id="btn-cancel" onclick="cancelCustom()" class="btn btn-secondary">Batal</button>
@@ -51,7 +51,7 @@
                                         <div class="input-group mb-3">
                                             <input wire:model.defer="custom_url" id="custom_url" type="text" class="form-control" placeholder="Ubah URL" aria-label="">
                                             <div class="input-group-append">
-                                                <button id="btn" class="btn btn-primary" wire:click="customURL" type="button">Simpan!
+                                                <button id="btn" class="btn btn-danger" wire:click="customURL" type="button">Simpan!
                                                     <span wire:loading wire:target="customURL" class="fas fa-spinner"></span>
                                                 </button>
                                                 <button id="btn-cancel" onclick="cancelCustom()" class="btn btn-secondary">Batal</button>

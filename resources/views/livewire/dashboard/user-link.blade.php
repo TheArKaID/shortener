@@ -10,6 +10,26 @@
                     <div class="card-header">
                         <h4>Your URL</h4>
                     </div>
+                    @if (session()->has('sukses'))
+                        <div class="alert alert-success alert-dismissible show fade">
+                            <div class="alert-body">
+                                <button class="close" data-dismiss="alert">
+                                    <span>×</span>
+                                </button>
+                                {{session('sukses')}}
+                            </div>
+                        </div>
+                    @endif
+                    @if (session()->has('gagal'))
+                        <div class="alert alert-danger alert-dismissible show fade">
+                            <div class="alert-body">
+                                <button class="close" data-dismiss="alert">
+                                    <span>×</span>
+                                </button>
+                                {{session('gagal')}}
+                            </div>
+                        </div>
+                    @endif
                     <div class="card-body">
                         <div class="form-group">
                             <div class="input-group mb-3">
@@ -49,7 +69,18 @@
                                                 </td>
                                                 <td><a target="_blank" href="{{$this_url.$link->short_url}}">{{$this_url.$link->short_url}}</a></td>
                                                 <td>{{$link->views}}</td>
-                                                <td><a href="#" class="btn btn-danger">Delete</a></td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Hapus
+                                                        </button>
+                                                        <div class="dropdown-menu" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -217px, 0px);">
+                                                            <div class="dropdown-title">Apakah adan yakin ?</div>
+                                                            <div class="dropdown-divider"></div>
+                                                            <button wire:click="deleteUrl('{{$link->id}}')" class="dropdown-item bg-danger">Hapus</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>

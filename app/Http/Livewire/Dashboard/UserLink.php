@@ -43,4 +43,22 @@ class UserLink extends Component
         $url = implode('/', $url); 
         return $url.'/';
     }
+
+    public function deleteUrl($deletedId)
+    {
+        $deletedUrl = Link::find($deletedId);
+        if($deletedUrl) {
+            if($deletedUrl->user_id === \Auth::user()->id) {
+                $deletedUrl->delete();
+                session()->flash('sukses', 'Berhasil Menghapus');
+                return redirect(route('dashboard.link'));
+            } else {
+                session()->flash('gagal', 'Gagal menghapus!');
+                return redirect(route('dashboard.link'));
+            }
+        } else {
+            session()->flash('gagal', 'Gagal menghapus!');
+            return redirect(route('dashboard.link'));
+        }
+    }
 }

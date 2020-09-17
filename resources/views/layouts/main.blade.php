@@ -40,6 +40,8 @@
                 </section>
             </div>
 
+            @yield('modals')
+
             @include('layouts.includes.footer')
 
         </div>
